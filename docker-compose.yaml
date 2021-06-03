@@ -4,17 +4,6 @@ services:
     app:
         build: 
             context: .
-<<<<<<< HEAD
-        ports:
-            - "8000:8000"
-        volumes:
-            - ./app:/app
-        command: >
-            sh -c "python manage.py runserver 0.0.0.0:8000"
-        environment:
-            - DB_HOST=db
-            - DB_NAME=app
-=======
         ports: 
             - "8000:8000"
         volumes: 
@@ -24,7 +13,6 @@ services:
         environment: 
             - DB_HOST=db
             - DB_NAME=appdb
->>>>>>> c55c99a6415f115ed8f7c75dedb39009066313db
             - DB_USER=postgres
             - DB_PASSWORD=secretpassword
         depends_on: 
@@ -33,10 +21,6 @@ services:
     db:
         image: postgres:13-alpine
         environment: 
-<<<<<<< HEAD
-            - POSTGRES_DB=app
-=======
             - POSTGRES_DB=appdb
->>>>>>> c55c99a6415f115ed8f7c75dedb39009066313db
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=secretpassword
